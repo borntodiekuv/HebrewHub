@@ -1,1 +1,17 @@
+if game.PlaceId == 8069117419 then
 
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/DemonSouls/main/tastysex'))()
+
+elseif game.PlaceId == 8151458037 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/ys/main/jerks'))()
+
+elseif game.PlaceId == 8823442198 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/Die/main/DeepwokenBattle'))()
+    
+elseif game.PlaceId == 7728848215 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/Slashing/main/UPDATED'))()
+
+elseif game.PlaceId == 8950979693 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/Anime/main/Rebirth'))()
+
+end
