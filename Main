@@ -14,4 +14,9 @@ elseif game.PlaceId == 7728848215 then
 elseif game.PlaceId == 8950979693 then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/Anime/main/Rebirth'))()
 
+
+elseif game.PlaceId == 8750997647 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/HebrewHub/main/TappingLegendsX'))()
+
 end
+
