@@ -1,22 +1,13 @@
-if game.PlaceId == 8069117419 then
+local Games = {
+    [8069117419] = "DemonSouls/main/tastysex";
+    [8151458037] = "ys/main/jerks";
+    [8823442198] = "Die/main/DeepwokenBattle";
+    [7728848215] = "Slashing/main/UPDATED";
+    [8950979693] = "Anime/main/Rebirth";
+    [8750997647] = "HebrewHub/main/TappingLegendsX";
+}
 
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/DemonSouls/main/tastysex'))()
-
-elseif game.PlaceId == 8151458037 then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/ys/main/jerks'))()
-
-elseif game.PlaceId == 8823442198 then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/Die/main/DeepwokenBattle'))()
-    
-elseif game.PlaceId == 7728848215 then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/Slashing/main/UPDATED'))()
-
-elseif game.PlaceId == 8950979693 then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/Anime/main/Rebirth'))()
-
-
-elseif game.PlaceId == 8750997647 then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/HebrewHub/main/TappingLegendsX'))()
-
+local Supported = Games[game.PlaceId] or false
+if Supported ~= false then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/' .. Supported))()
 end
-
