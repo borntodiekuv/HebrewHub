@@ -1,6 +1,6 @@
 local Games = {
     [8069117419] = "HebrewHub/main/DemonSoul";
-    [8151458037] = "ys/main/jerks";
+    [8151458037] = "HebrewHub/main/RLT";
     [8823442198] = "Die/main/DeepwokenBattle";
     [7728848215] = "Slashing/main/UPDATED";
     [8950979693] = "Anime/main/Rebirth";
