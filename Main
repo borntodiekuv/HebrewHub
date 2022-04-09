@@ -1,5 +1,5 @@
 local Games = {
-    [8069117419] = "DemonSouls/main/tastysex";
+    [8069117419] = "HebrewHub/main/DemonSoul";
     [8151458037] = "ys/main/jerks";
     [8823442198] = "Die/main/DeepwokenBattle";
     [7728848215] = "Slashing/main/UPDATED";
@@ -11,3 +11,4 @@ local Supported = Games[game.PlaceId] or false
 if Supported ~= false then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/borntodiekuv/' .. Supported))()
 end
+
