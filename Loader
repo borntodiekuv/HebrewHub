@@ -1,5 +1,7 @@
-if v:IsA "ScreenGui" and v:FindFirstChild("MainFrame") then
+for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    if v:IsA "ScreenGui" and v:FindFirstChild("MainFrame") then
    v:Destroy()
+end
 end
 
 if game:GetService("CoreGui"):FindFirstChild("Notifaction") then
@@ -581,6 +583,7 @@ local UIS = game:GetService('UserInputService')
                ):Play()
             end)
             end
+            end
 
             repeat wait() until MainFrame.Size == UDim2.new(0, 650, 0, 0)
 
@@ -619,6 +622,7 @@ local UIS = game:GetService('UserInputService')
             uitoggled = false
          end
          end
+         end)
 
 
    TweenService:Create(
