@@ -508,7 +508,9 @@ local UIS = game:GetService('UserInputService')
     local uitoggled = false
   UserInputService.InputBegan:Connect(
    function(io, p)
-      if io.KeyCode == Enum.KeyCode[game:GetService("CoreGui").woof.MainFrame.MainFrameholder.Keybind.BindText.Text] then
+   for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+       if v:IsA "ScreenGui" and v:FindFirstChild("MainFrame") then
+      if io.KeyCode == Enum.KeyCode[v.MainFrame.MainFrameholder.Keybind.BindText.Text] then
          if uitoggled == false then
             TaTitle.Visible = false
             TabHolder.Visible = false
