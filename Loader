@@ -582,9 +582,9 @@ local UIS = game:GetService('UserInputService')
                   TweenInfo.new(.3, Enum.EasingStyle.Quad),
                   {BackgroundTransparency = 0.6}
                ):Play()
-            end
-            end
             end)
+            end
+            end
 
             repeat wait() until MainFrame.Size == UDim2.new(0, 650, 0, 0)
 
