@@ -4,7 +4,7 @@ if v.Name == woof.Name then
 v:remove()
 end
 end
-
+end
 
 if game:GetService("CoreGui"):FindFirstChild("Notifaction") then
    game:GetService("CoreGui").Notifaction:Destroy();
