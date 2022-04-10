@@ -1,4 +1,7 @@
-   game.CoreGui[woof]:Destroy()
+        for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+       if v:IsA "ScreenGui" and v:FindFirstChild("MainFrame") then
+      v:Destroy()
+   end
 end
 
 if game:GetService("CoreGui"):FindFirstChild("Notifaction") then
