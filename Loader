@@ -93,7 +93,7 @@ local function MakeDraggable(topbarobject, object)
 
 
 local woof = Instance.new("ScreenGui")
-woof.Name = "woof"
+woof.Name = math.random(1,948750)
 woof.Parent = game.CoreGui
 
 function Mainholder:Window(hubname, gamename, discordlink, halflink)
