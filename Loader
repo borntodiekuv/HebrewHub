@@ -620,7 +620,7 @@ local UIS = game:GetService('UserInputService')
             uitoggled = false
          end
          end
-         end)
+         end
 
 
    TweenService:Create(
@@ -2612,3 +2612,5 @@ end
 return Tabs
 end
 return Mainholder
+end)
+end
