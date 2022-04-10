@@ -1,7 +1,6 @@
 if v:IsA "ScreenGui" and v:FindFirstChild("MainFrame") then
    v:Destroy()
 end
-end
 
 if game:GetService("CoreGui"):FindFirstChild("Notifaction") then
    game:GetService("CoreGui").Notifaction:Destroy();
@@ -581,7 +580,6 @@ local UIS = game:GetService('UserInputService')
                   {BackgroundTransparency = 0.6}
                ):Play()
             end)
-            end
             end
 
             repeat wait() until MainFrame.Size == UDim2.new(0, 650, 0, 0)
