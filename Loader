@@ -1,9 +1,30 @@
-if woof ~= nil then
+local random = Random.new()
+local letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
+
+function getRandomLetter()
+    return letters[random:NextInteger(1,#letters)]
+end
+
+function getRandomString(length, includeCapitals)
+    local length = length or 10
+    local str = ''
+    for i=1,length do
+        local randomLetter = getRandomLetter()
+        if includeCapitals and random:NextNumber() > .5 then
+            randomLetter = string.upper(randomLetter)
+        end
+        str = str .. randomLetter
+    end
+    return str
+end
+
+local randomString = getRandomString(7, true)
+
+
 for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
-if v.Name == woof.Name then
-v:remove()
-end
-end
+    if v.Name == randomString then
+        v:remove()
+    end
 end
 
 if game:GetService("CoreGui"):FindFirstChild("Notifaction") then
@@ -97,7 +118,7 @@ local function MakeDraggable(topbarobject, object)
 
 
 local woof = Instance.new("ScreenGui")
-woof.Name = math.random(1,948750)
+woof.Name = randomString
 woof.Parent = game.CoreGui
 
 function Mainholder:Window(hubname, gamename, discordlink, halflink)
