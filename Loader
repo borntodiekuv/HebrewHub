@@ -619,7 +619,6 @@ local UIS = game:GetService('UserInputService')
             uitoggled = false
          end
          end
-         end)
 
 
    TweenService:Create(
