@@ -5,6 +5,8 @@ local Games = {
     [7728848215] = "Slashing/main/UPDATED";
     [8950979693] = "Anime/main/Rebirth";
     [8750997647] = "HebrewHub/main/TappingLegendsX";
+    [8781849572] = "HebrewHub/main/StarSim";
+
 }
 
 local Supported = Games[game.PlaceId] or false
