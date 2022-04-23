@@ -41,6 +41,13 @@ Window:AddToggle({text = "Grab Items", flag = "toggle", state = false, callback 
 end
     end})
 
+    Window:AddButton({text = "Use Charged Arrow", flag = "button", callback = function()
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Charged Arrow"))
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Charged Arrow").Use:FireServer()
+
+        end})
+
+
     Window:AddButton({text = "Use Stand Arrow", flag = "button", callback = function()
         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Stand Arrow"))
         game:GetService("Players").LocalPlayer.Character:FindFirstChild("Stand Arrow").Use:FireServer()
