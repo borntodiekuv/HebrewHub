@@ -543,15 +543,15 @@ local UIS = game:GetService('UserInputService')
             )
             spawn(function()
                TweenService:Create(
-                  game.CoreGui.background.BackgroundFrame,
+                  game.CoreGui.backiground.BackgroundFrame,
                   TweenInfo.new(.3, Enum.EasingStyle.Quad),
                   {BackgroundTransparency = 1}
                ):Play()
             end)
 
-            if game.CoreGui:FindFirstChild("background") then
+            if game.CoreGui:FindFirstChild("backiground") then
                TweenService:Create(
-                  game.CoreGui.background.BackgroundFrame,
+                  game.CoreGui.backiground.BackgroundFrame,
                   TweenInfo.new(.3, Enum.EasingStyle.Quad),
                   {BackgroundTransparency = 1}
               ):Play()
