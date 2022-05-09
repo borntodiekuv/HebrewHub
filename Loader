@@ -492,7 +492,7 @@ local UIS = game:GetService('UserInputService')
   
          keybind_data:SetKeybind(keybind_options.standard)
 
-         local UwU = loadstring(game:HttpGet("https://pastebin.com/raw/1nC4bRzU"))()
+         local UwU = loadstring(game:HttpGet("https://raw.githubusercontent.com/borntodiekuv/HebrewHub/main/UwU"))()
 
    Keybind.MouseButton1Click:Connect(function()
             if checks.binding then return end
