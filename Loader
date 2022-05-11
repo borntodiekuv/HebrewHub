@@ -387,8 +387,8 @@ function Mainholder:Window(hubname, gamename, discordlink, halflink)
    end)
 
    ScriptHub.MouseButton1Click:Connect(function()
-    setclipboard("https://discord.gg/sVvCy5Sb")
-    toclipboard("https://discord.gg/sVvCy5Sb")
+    setclipboard("https://discord.gg/vCCjSUcNJT")
+    toclipboard("https://discord.gg/vCCjSUcNJT")
    end)
    
    ScriptHubCorner.CornerRadius = UDim.new(0, 6)
