@@ -570,7 +570,7 @@ local UIS = game:GetService('UserInputService')
             )
             spawn(function()
                TweenService:Create(
-                  game.CoreGui.backiground.BackgroundFrame,
+                  game.CoreGui.background.BackgroundFrame,
                   TweenInfo.new(.3, Enum.EasingStyle.Quad),
                   {BackgroundTransparency = 0.6}
                ):Play()
@@ -585,9 +585,9 @@ local UIS = game:GetService('UserInputService')
                0.3,
                false
             )
-            if game.CoreGui:FindFirstChild("backiground") then
+            if game.CoreGui:FindFirstChild("background") then
                TweenService:Create(
-                  game.CoreGui.backiground.BackgroundFrame,
+                  game.CoreGui.background.BackgroundFrame,
                   TweenInfo.new(.3, Enum.EasingStyle.Quad),
                   {BackgroundTransparency = 0.6}
               ):Play()
@@ -678,7 +678,7 @@ function Tabs:Tab(Title)
    TabTitle.TextSize = 17.000
    TabTitle.TextXAlignment = Enum.TextXAlignment.Left
    
-   TabGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 204, 51))}
+   TabGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255)))}
    TabGradient.Name = "TabGradient"
    TabGradient.Parent = Tab
 
@@ -910,7 +910,7 @@ function ContainerItems:Slider(text, min, max, start, callback)
    SliderIndicatorCorner.Name = "SliderIndicatorCorner"
    SliderIndicatorCorner.Parent = SliderIndicator
    
-   SliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 204, 51))}
+   SliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255)))}
    SliderIndicatorGradient.Name = "SliderIndicatorGradient"
    SliderIndicatorGradient.Parent = SliderIndicator
    
@@ -1641,7 +1641,7 @@ function ContainerItems:Toggle(title, Default, callback)
    ToggleDot.Size = UDim2.new(0, 22, 0, 20)
    
 
-   ToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 204, 51))}
+   ToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255)))}
    ToggleDotGradient.Name = "ToggleDotGradient"
    ToggleDotGradient.Parent = ToggleDot
    
@@ -2341,7 +2341,7 @@ function ContainerItems:Colorpicker(text, preset, callback)
    RainbowToggleDotCorner.Name = "RainbowToggleDotCorner"
    RainbowToggleDotCorner.Parent = RainbowToggleDot
 
-   RainbowToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 204, 51))}
+   RainbowToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255)))}
    RainbowToggleDotGradient.Name = "RainbowToggleDotGradient"
    RainbowToggleDotGradient.Parent = RainbowToggleDot
 
