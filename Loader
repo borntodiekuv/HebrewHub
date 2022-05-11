@@ -678,7 +678,7 @@ function Tabs:Tab(Title)
    TabTitle.TextSize = 17.000
    TabTitle.TextXAlignment = Enum.TextXAlignment.Left
    
-   TabGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(247, 33, 25)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255))}
+   TabGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(176, 38, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(247, 33, 25))}
    TabGradient.Name = "TabGradient"
    TabGradient.Parent = Tab
 
@@ -910,7 +910,7 @@ function ContainerItems:Slider(text, min, max, start, callback)
    SliderIndicatorCorner.Name = "SliderIndicatorCorner"
    SliderIndicatorCorner.Parent = SliderIndicator
    
-   SliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(247, 33, 25)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255))}
+   SliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(176, 38, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(247, 33, 25))}
    SliderIndicatorGradient.Name = "SliderIndicatorGradient"
    SliderIndicatorGradient.Parent = SliderIndicator
    
@@ -1641,7 +1641,7 @@ function ContainerItems:Toggle(title, Default, callback)
    ToggleDot.Size = UDim2.new(0, 22, 0, 20)
    
 
-   ToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(247, 33, 25)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255))}
+   ToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(176, 38, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(247, 33, 25))}
    ToggleDotGradient.Name = "ToggleDotGradient"
    ToggleDotGradient.Parent = ToggleDot
    
@@ -2341,7 +2341,7 @@ function ContainerItems:Colorpicker(text, preset, callback)
    RainbowToggleDotCorner.Name = "RainbowToggleDotCorner"
    RainbowToggleDotCorner.Parent = RainbowToggleDot
 
-   RainbowToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(247, 33, 25)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(176, 38, 255))}
+   RainbowToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(176, 38, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(247, 33, 25))}
    RainbowToggleDotGradient.Name = "RainbowToggleDotGradient"
    RainbowToggleDotGradient.Parent = RainbowToggleDot
 
