@@ -352,7 +352,7 @@ function Mainholder:Window(hubname, gamename, discordlink, halflink)
    ScriptHub.Size = UDim2.new(0, 170, 0, 40)
    ScriptHub.AutoButtonColor = false
    ScriptHub.Font = Enum.Font.Gotham
-   ScriptHub.Text = "Copy Discord"
+   ScriptHub.Text = "Copy Discord Link"
    ScriptHub.TextColor3 = Color3.fromRGB(255, 255, 255)
    ScriptHub.TextSize = 20.000
 
