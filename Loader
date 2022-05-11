@@ -352,7 +352,7 @@ function Mainholder:Window(hubname, gamename, discordlink, halflink)
    ScriptHub.Size = UDim2.new(0, 170, 0, 40)
    ScriptHub.AutoButtonColor = false
    ScriptHub.Font = Enum.Font.Gotham
-   ScriptHub.Text = "ScriptHub"
+   ScriptHub.Text = "Copy Discord"
    ScriptHub.TextColor3 = Color3.fromRGB(255, 255, 255)
    ScriptHub.TextSize = 20.000
 
@@ -387,11 +387,8 @@ function Mainholder:Window(hubname, gamename, discordlink, halflink)
    end)
 
    ScriptHub.MouseButton1Click:Connect(function()
-      if game.CoreGui:FindFirstChild("ScriptBloxSearcher") then
-         game:GetService("CoreGui").ScriptBloxSearcher.MainFrame.Visible = true
-     else
-         loadstring(game:HttpGet("https://pastebin.com/raw/JZs1kNAT"))()
-     end
+    setclipboard("https://discord.gg/sVvCy5Sb")
+    toclipboard("https://discord.gg/sVvCy5Sb")
    end)
    
    ScriptHubCorner.CornerRadius = UDim.new(0, 6)
