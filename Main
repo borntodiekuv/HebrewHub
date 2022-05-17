@@ -15,7 +15,7 @@ if req then
 		Body = http:JSONEncode({
 			cmd = 'INVITE_BROWSER',
 			nonce = http:GenerateGUID(false),
-			args = {code = 'vCCjSUcNJT'}
+			args = {code = 'UyuSF4fPC9'}
 		})
 	})
 end
