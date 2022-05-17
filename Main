@@ -28,8 +28,8 @@ local Games = {
     [8950979693] = "Anime/main/Rebirth";
     [8750997647] = "KeybrewHub/main/TappingLegendsX";
     [8781849572] = "KeybrewHub/main/StarSim";
-    [9072679513] = "KeybrewHub/main/impact"
-
+    [9072679513] = "KeybrewHub/main/impact";
+    [9446230774] = "KeybrewHub/main/sonic";
 
 }
 
