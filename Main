@@ -31,6 +31,7 @@ local Games = {
     [9072679513] = "KeybrewHub/main/impact";
     [9446230774] = "KeybrewHub/main/sonic";
     [6969185078] = "KeybrewHub/main/Element";
+    [9281034297] = "KeybrewHub/main/Goal";
 
 }
 
