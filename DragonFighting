@@ -23,13 +23,6 @@ local Main = X.New({
     Title = "Main"
 })
 
-local Z = X.New({
-    Title = "Chests"
-})
-
-local Misc = X.New({
-    Title = "Misc"
-})
 
 local Cred = X.New({
     Title = "Credits"
