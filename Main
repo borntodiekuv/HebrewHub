@@ -32,7 +32,7 @@ local Games = {
     [9446230774] = "KeybrewHub/main/sonic";
     [6969185078] = "KeybrewHub/main/Element";
     [9281034297] = "KeybrewHub/main/Goal";
-    [9543170123] = KeybrewHub/main/DragonFighting;
+    [9543170123] = "KeybrewHub/main/DragonFighting";
 
 }
 
