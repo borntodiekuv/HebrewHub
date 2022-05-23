@@ -22,9 +22,9 @@ end
 
 local Games = {
     [8090572921] = "none010xzs/main/mjuaz";
-    [8860321655] = "WhiteMan420/bub/main/bub";
-    [9187108855] = "WhiteMan420/bub/main/bub";
-    [8872323153] = "WhiteMan420/bub/main/bub";
+    [8860321655] = "bub/main/bub";
+    [9187108855] = "bub/main/bub";
+    [8872323153] = "bub/main/bub";
 }
 
 local Supported = Games[game.PlaceId] or false
