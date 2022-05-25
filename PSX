@@ -226,11 +226,6 @@ Misc.Toggle({
             return Save()[v]
         end
         
-        game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.LayoutOrder = 99988
-        game:GetService("Players").LocalPlayer.PlayerGui.Main.Right['Tech Coins'].LayoutOrder = 99992
-        game:GetService("Players").LocalPlayer.PlayerGui.Main.Right['Fantasy Coins'].LayoutOrder = 99994
-        game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Coins.LayoutOrder = 99996
-        game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.UIListLayout.HorizontalAlignment = 2
         
         getgenv().MyTables = {}
         for i,v in pairs(Tables) do
