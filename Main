@@ -13,7 +13,6 @@ local Games = {
     [9543170123] = "KeybrewHub/main/DragonFighting"; 
     [4032944086] = "KeybrewHub/main/huge";
     [6284583030] = "KeybrewHub/main/PSX";
-    [286090429] = "KeybrewHub/main/ars";
 }
 
 local Supported = Games[game.PlaceId] or false
@@ -23,6 +22,7 @@ end
 
 local Games = {
     [8090572921] = "none010xzs/main/mjuaz";
+    [286090429] = "WhiteMan420/none010xzs/main/jack";
     [8860321655] = "bub/main/bub";
     [9187108855] = "bub/main/bub";
     [8872323153] = "bub/main/bub";
