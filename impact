@@ -100,7 +100,7 @@ end
             }
             
             game:GetService("ReplicatedStorage").Remotes.ClientRemote:InvokeServer(unpack(args))   
-            wait(2) 
+            wait(1) 
         end
     end,
     Enabled = false
