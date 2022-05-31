@@ -149,7 +149,7 @@ Main.Toggle({
             for i,v in next, game:GetService("Workspace").Maps:GetChildren() do
                 if  v.Parent.Name == "Maps" and v:FindFirstChild("IsBoss") then
             pcall(function()
-                lp.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                lp.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame + Vector3.new(0,-2,-3)
                     end)
                 end
             end
