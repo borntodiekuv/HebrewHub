@@ -194,8 +194,6 @@ TP.Button({
         "5x Train",
         "25x Train",
         "125x Train",
-        "2x Mana",
-        "5x Mana"
     },
 })
     TP.Button({
@@ -209,9 +207,26 @@ TP.Button({
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(133.238098, 9.33099651, 16109.8379, -0.0871315002, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, -0.0871315002)
             elseif tteleport == "125x Train" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(503, 9, 20762)
-            elseif tteleport == "2x Mana" then
+            end    
+        end,
+})
+
+TP.Dropdown({
+    Text = "Mana",
+    Callback = function(teleport2)
+        getgenv().tteleport1 = teleport2
+    end,
+    Options = {
+        "2x Mana",
+        "5x Mana"
+    },
+})
+    TP.Button({
+    Text = "Teleport",
+    Callback = function()
+            if tteleport1 == "2x Mana" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(288, 21, 14507)
-            elseif tteleport == "5x Mana" then
+            elseif tteleport1 == "5x Mana" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(293, 14, 18506)
             end    
         end,
