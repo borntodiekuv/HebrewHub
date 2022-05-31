@@ -157,3 +157,23 @@ Main.Toggle({
     end,
     Enabled = false
 })
+
+    Misc.Slider({
+    Text = "WalkSpeed",
+    Callback = function(warthog)
+        getgenv().speed = warthog
+    end,
+    Min = 1,
+    Max = 500,
+    Def = 50
+})
+    Misc.Toggle({
+    Text = "Toggle",
+    Callback = function(g)
+        gg = g
+        while gg do task.wait()
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+        end
+    end,
+    Enabled = false
+})
