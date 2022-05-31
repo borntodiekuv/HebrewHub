@@ -121,7 +121,14 @@ Main.Toggle({
 
         end
     end,
-    Enabled = false
+    Enabled = false,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "Have to be close to a Trainer to work."
+            })
+        end
+    }
 })
 
 
