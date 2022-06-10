@@ -154,7 +154,7 @@ Main.Toggle({
                 },
                 [3] = 1
             }
-            wait(1)
+            wait(0.3)
 
             game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
             local args = {
@@ -164,7 +164,7 @@ Main.Toggle({
                 },
                 [3] = 2
             }
-            wait(1)
+            wait(0.3)
             game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
             local args = {
                 [1] = "UseSkill",
@@ -173,7 +173,7 @@ Main.Toggle({
                 },
                 [3] = 3
             }
-            wait(1)
+            wait(0.3)
             game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
             local args = {
                 [1] = "UseSkill",
@@ -184,7 +184,7 @@ Main.Toggle({
             }
 
             game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-            wait(1)
+            wait(0.3)
             end)
         end
     end,
