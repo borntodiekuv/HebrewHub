@@ -77,11 +77,21 @@ local Cred = X.New({
     end
 })
 
+    Main.Slider({
+    Text = "Distance Slider",
+    Callback = function(Value)
+        getgenv().dis = Value
+    end,
+    Min = 5,
+    Max = 50,
+    Def = 5
+})
+
 local function getNPC()
     local dist, thing = math.huge
-    for i,v in pairs(game:GetService("Workspace").Living[mob]:GetChildren()) do
-        if v.Name == "HumanoidRootPart" and v:IsA("Part") then
-            local mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Position).magnitude
+    for i,v in pairs(game:GetService("Workspace").Living:GetChildren()) do
+        if v:IsA("Model") and v.Name == mob then
+            local mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
             if mag < dist then 
                 dist = mag 
                 thing = v 
@@ -98,7 +108,8 @@ end
         a1 = a
         while a1 do task.wait()   
             pcall(function()  
-                lp.Character.HumanoidRootPart.CFrame = CFrame.new(getNPC().Position + Vector3.new(0,tonumber(dis),0),getNPC().Position) 
+
+                lp.Character.HumanoidRootPart.CFrame = CFrame.new(getNPC().HumanoidRootPart.Position + Vector3.new(0,tonumber(dis),0),getNPC().HumanoidRootPart.Position) 
 
                 local args = {
                     [1] = {
@@ -108,7 +119,26 @@ end
                 }
 
                 game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(args))
-                
+                if lp.Status.Weapon.Value == nil then
+                    local args = {
+                        [1] = {
+                            ["inputType"] = Enum.UserInputType.Keyboard,
+                            ["keyCode"] = Enum.KeyCode.E
+                        }
+                    }
+    
+                    game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(args))
+                elseif getNPC().Status.Blocking.Value == true then
+                    local args = {
+                        [1] = {
+                            ["inputType"] = Enum.UserInputType.Keyboard,
+                            ["keyCode"] = Enum.KeyCode.R
+                        }
+                    }
+
+                    game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(args))
+
+                end
             end) 
         end
     end,
@@ -142,4 +172,49 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.NPCs
 end,
 })
 
+    Main.Dropdown({
+    Text = "Quests",
+    Callback = function(Value)
+        getgenv().quest = Value
+    end,
+    Options = {
+        "Acquired Taste",
+        "Op Killer",
+        "Hueco Mundo Hunt",
+    }
+})
 
+Main.Toggle({
+    Text = "Auto Take Quest",
+    Callback = function(a)
+        a2 = a
+        while a2 do task.wait()   
+            pcall(function()  
+                if quest == "Acquired Taste" then
+                    local args = {
+                        [1] = "Acquired Taste",
+                        [2] = workspace.NPCs.FireFlare96
+                    }
+
+                    game:GetService("ReplicatedStorage").Remotes.TakeQuest:FireServer(unpack(args))
+                elseif quest == "Op Killer" then
+                        local args = {
+                            [1] = "Op Killer",
+                            [2] = workspace.NPCs.Infernasu
+                        }
+    
+                        game:GetService("ReplicatedStorage").Remotes.TakeQuest:FireServer(unpack(args))
+                    elseif quest == "Hueco Mundo Hunt" then
+                        local args = {
+                            [1] = "Hueco Mundo Hunt",
+                            [2] = workspace.NPCs.CelestialMystical
+                        }
+    
+                        game:GetService("ReplicatedStorage").Remotes.TakeQuest:FireServer(unpack(args))
+                    
+                end
+            end) 
+        end
+    end,
+    Enabled = false
+})
