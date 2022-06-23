@@ -1,55 +1,3 @@
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
-local lp = game.Players.LocalPlayer
-local X =
-    Material.Load(
-    {
-        Title = "Keybrew Hub | Anime Dimensions",
-        Style = 3,
-        SizeX = 300,
-        SizeY = 350,
-        Theme = "Light",
-        ColorOverrides = {
-            MainFrame = Color3.fromRGB(0, 0, 0),
-            Toggle = Color3.fromRGB(124, 37, 255),
-            ToggleAccent = Color3.fromRGB(255, 255, 255),
-            Dropdown = Color3.fromRGB(124, 37, 255),
-            DropdownAccent = Color3.fromRGB(255, 255, 255),
-            Slider = Color3.fromRGB(124, 37, 255),
-            SliderAccent = Color3.fromRGB(255, 255, 255),
-            NavBarAccent = Color3.fromRGB(0, 0, 0),
-            Content = Color3.fromRGB(0, 0, 0)
-        }
-    }
-)
-local Main =
-    X.New(
-    {
-        Title = "Main"
-    }
-)
-local Misc =
-    X.New(
-    {
-        Title = "Misc"
-    }
-)
-
-local Cred =
-    X.New(
-    {
-        Title = "Credits"
-    }
-)
-Cred.Button(
-    {
-        Text = "Copy Discord UyuSF4fPC9",
-        Callback = function()
-            setclipboard("https://discord.gg/UyuSF4fPC9")
-            toclipboard("https://discord.gg/UyuSF4fPC9")
-        end
-    }
-)
-
 local function getNPC()
     local dist, thing = math.huge
     for i, v in pairs(game:GetService("Workspace").Folders.Monsters:GetChildren()) do
@@ -101,139 +49,79 @@ local function moveto(obj, speed)
     )
 end
 
-Main.Toggle(
-    {
-        Text = "Auto Attack",
-        Callback = function(a)
-            aa = a
-            while aa do
-                task.wait()
-                pcall(
-                    function()
-                        local args = {
-                            [1] = "UseSkill",
-                            [2] = {
-                                ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame,
-                                ["attackNumber"] = 1
-                            },
-                            [3] = "BasicAttack"
-                        }
+while tp do
+    task.wait()
+    pcall(
+        function()
+            moveto(getNPC().HumanoidRootPart.CFrame + Vector3.new(0, tonumber(distance), 0), 150)
+        end
+    )
+end
+while autoskill do
+    task.wait()
+    pcall(
+        function()
+            local args = {
+                [1] = "UseSkill",
+                [2] = {
+                    ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
+                },
+                [3] = 1
+            }
+            wait(0.3)
 
-                        game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-                        wait(1)
-                    end
-                )
-            end
-        end,
-        Enabled = false
-    }
-)
+            game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
+            local args = {
+                [1] = "UseSkill",
+                [2] = {
+                    ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
+                },
+                [3] = 2
+            }
+            wait(0.5)
+            game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
+            local args = {
+                [1] = "UseSkill",
+                [2] = {
+                    ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
+                },
+                [3] = 3
+            }
+            wait(0.3)
+            game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
+            local args = {
+                [1] = "UseSkill",
+                [2] = {
+                    ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
+                },
+                [3] = 4
+            }
 
-Main.Slider(
-    {
-        Text = "Distance",
-        Callback = function(Value)
-            getgenv().distance = Value
-        end,
-        Min = 1,
-        Max = 25,
-        Def = 1
-    }
-)
+            game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
+            wait(0.3)
+            local args = {
+                [1] = "UseAssistSkill",
+                [2] = {
+                    ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
+                },
+                [3] = 1
+            }
 
-Main.Toggle(
-    {
-        Text = "Tp to mob",
-        Callback = function(a)
-            a2 = a
-            while a2 do
-                task.wait()
-                pcall(
-                    function()
-                        moveto(getNPC().HumanoidRootPart.CFrame + Vector3.new(0, tonumber(distance), 0), 150)
-                    end
-                )
-            end
-        end,
-        Enabled = false
-    }
-)
+            game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
+            wait(0.3)
+            local args = {
+                [1] = "UseAssistSkill",
+                [2] = {
+                    ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
+                },
+                [3] = 2
+            }
 
-Main.Toggle(
-    {
-        Text = "Auto Skill",
-        Callback = function(a)
-            a1 = a
-            while a1 do
-                task.wait()
-                pcall(
-                    function()
-                        local args = {
-                            [1] = "UseSkill",
-                            [2] = {
-                                ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
-                            },
-                            [3] = 1
-                        }
-                        wait(0.3)
-
-                        game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-                        local args = {
-                            [1] = "UseSkill",
-                            [2] = {
-                                ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
-                            },
-                            [3] = 2
-                        }
-                        wait(0.5)
-                        game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-                        local args = {
-                            [1] = "UseSkill",
-                            [2] = {
-                                ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
-                            },
-                            [3] = 3
-                        }
-                        wait(0.3)
-                        game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-                        local args = {
-                            [1] = "UseSkill",
-                            [2] = {
-                                ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
-                            },
-                            [3] = 4
-                        }
-
-                        game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-                        wait(0.3)
-                        local args = {
-                            [1] = "UseAssistSkill",
-                            [2] = {
-                                ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
-                            },
-                            [3] = 1
-                        }
-
-                        game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-                        wait(0.3)
-                        local args = {
-                            [1] = "UseAssistSkill",
-                            [2] = {
-                                ["hrpCFrame"] = getNPC().HumanoidRootPart.CFrame
-                            },
-                            [3] = 2
-                        }
-
-                        game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
-                        wait(0.3)
-                    end
-                )
-            end
-        end,
-        Enabled = false
-    }
-)
-getgenv().retry = true
+            game:GetService("ReplicatedStorage").RemoteEvents.MainRemoteEvent:FireServer(unpack(args))
+            wait(0.3)
+        end
+    )
+end
 while retry do
     task.wait()
     local args = {
