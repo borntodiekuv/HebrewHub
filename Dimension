@@ -48,7 +48,7 @@ local function moveto(obj, speed)
         end
     )
 end
-getgenv().tp = true
+
 while tp do
     task.wait()
     pcall(
@@ -57,7 +57,6 @@ while tp do
         end
     )
 end
-getgenv().autoskill = true
 while autoskill do
     task.wait()
     pcall(
@@ -123,7 +122,6 @@ while autoskill do
         end
     )
 end
-getgenv().retry = true
 while retry do
     task.wait()
     local args = {
