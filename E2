@@ -141,7 +141,7 @@ Y.Toggle({
         a0 = Value
         while a0 do task.wait()
             pcall(function()
-                moveto(getTRINKETCFrame().CFrame + Vector3.new(0,0,0),100)
+                moveto(getTRINKETCFrame().CFrame + Vector3.new(0,0,0),150)
                 task.wait()
             end)
         end
