@@ -1,0 +1,212 @@
+local TweenService  = game:GetService("TweenService")
+local noclipE       = false
+local antifall      = false
+
+local function noclip()
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+        if v:IsA("BasePart") and v.CanCollide == true then
+            v.CanCollide = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+        end
+    end
+end
+
+local function moveto(obj, speed)
+    local info = TweenInfo.new(((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - obj.Position).Magnitude)/ speed,Enum.EasingStyle.Linear)
+    local tween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, info, {CFrame = obj})
+
+    if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+        antifall = Instance.new("BodyVelocity", game.Players.LocalPlayer.Character.HumanoidRootPart)
+        antifall.Velocity = Vector3.new(0,0,0)
+        noclipE = game:GetService("RunService").Stepped:Connect(noclip)
+        tween:Play()
+    end
+        
+    tween.Completed:Connect(function()
+        antifall:Destroy()
+        noclipE:Disconnect()
+    end)
+end
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+    Title = "Keybrew Hub | EL2",
+    Style = 3,
+    SizeX = 300,
+    SizeY = 350,
+    Theme = "Light",
+    ColorOverrides = {
+        MainFrame = Color3.fromRGB(0,0,0),
+        Toggle = Color3.fromRGB(124,37,255),
+        ToggleAccent = Color3.fromRGB(255,255,255), 
+        Dropdown = Color3.fromRGB(124,37,255),
+		DropdownAccent = Color3.fromRGB(255,255,255),
+        Slider = Color3.fromRGB(124,37,255),
+		SliderAccent = Color3.fromRGB(255,255,255),
+        NavBarAccent = Color3.fromRGB(0,0,0),
+        Content = Color3.fromRGB(0,0,0),
+    }
+})
+
+local Y = X.New({
+    Title = "1"
+})
+
+local Z = X.New({
+    Title = "2"
+})
+
+local Cred = X.New({
+    Title = "Credits"
+})
+    Cred.Button({
+    Text = "Copy Discord UyuSF4fPC9",
+    Callback = function()
+        setclipboard("https://discord.gg/UyuSF4fPC9")
+        toclipboard("https://discord.gg/UyuSF4fPC9")
+    end,
+})
+local Trainers = {}
+
+    for i, v in pairs(game:GetService("Workspace").NPCs.Trainers:GetChildren()) do
+        if v:IsA "Model"  then
+            if not table.find(Trainers, tostring(v)) then
+            table.insert(Trainers, tostring(v))
+        end
+    end
+end
+local Human = {}
+
+    for i, v in pairs(game:GetService("Workspace").NPCs.Humans:GetChildren()) do
+        if v:IsA "Model"  then
+            if not table.find(Human, tostring(v)) then
+            table.insert(Human, tostring(v))
+        end
+    end
+end
+local Misc = {}
+
+    for i, v in pairs(game:GetService("Workspace").NPCs.Misc:GetChildren()) do
+        if v:IsA "Model"  then
+            if not table.find(Misc, tostring(v)) then
+            table.insert(Misc, tostring(v))
+        end
+    end
+end
+local function getTRINKET()
+    local dist, thing = math.huge
+    for _,v in pairs(game:GetService("Workspace").MouseIgnore:GetDescendants()) do
+        if v.Name == "Clicker" and v:IsA"ClickDetector" and v.Parent.Name == "ClickPart" then
+            local mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Parent.Position).magnitude
+            if mag < dist then
+                dist = mag
+                thing = v
+            end
+        end
+    end
+    return thing
+end
+local function getTRINKETCFrame()
+    local dist, thing = math.huge
+    for _,v in pairs(game:GetService("Workspace").MouseIgnore:GetDescendants()) do
+        if v.Name == "ClickPart" and v:IsA"Part" then
+            local mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Parent.Position).magnitude
+            if mag < dist then
+                dist = mag
+                thing = v
+            end
+        end
+    end
+    return thing
+end
+
+    Y.Toggle({
+    Text = "Auto Pickup",
+    Callback = function(Value)
+        a = Value
+        while a do task.wait()
+            pcall(function()
+                fireclickdetector(getTRINKET())
+                task.wait()
+            end)
+        end
+    end,
+    Enabled = false
+})
+
+Y.Toggle({
+    Text = "Auto Tp Nearest Trinket",
+    Callback = function(Value)
+        a0 = Value
+        while a0 do task.wait()
+            pcall(function()
+                moveto(getTRINKETCFrame().CFrame + Vector3.new(0,0,0),100)
+                task.wait()
+            end)
+        end
+    end,
+    Enabled = false
+})
+
+
+Y.Dropdown({
+    Text = "interact",
+    Callback = function(Value)
+    getgenv().m2 = Value    
+end,
+    Options = { 
+        "The Eagle",
+        "Shady Dealer",
+
+    }   
+})
+
+    Y.Button({
+    Text = "Talk to Npc",
+    Callback = function()
+        if m2 == "Shady Dealer" then
+            fireclickdetector(game:GetService("Workspace").NPCs.Merchants["Shady Dealer"].ClickDetector)   
+        elseif m2 == "The Eagle" then
+            fireclickdetector(game.workspace["The Eagle"].ClickDetector)
+        end
+    end,
+})
+
+Y.Toggle({
+    Text = "Remove Lava",
+    Callback = function(Value)
+        c = Value
+        while c do task.wait()
+            game:GetService("Workspace").Map.Tundra.Lava:Destroy()
+        end
+    end,
+    Enabled = false
+})
+Y.Toggle({
+    Text = "Remove Killbricks",
+    Callback = function(Value)
+        c = Value
+        while c do task.wait()
+            game:GetService("Workspace").Map.KillBricks:Destroy()
+        end
+    end,
+    Enabled = false
+})
+Y.Toggle({
+    Text = "Remove FallDamage",
+    Callback = function(Value)
+        cc = Value
+        while cc do task.wait()
+            pcall(function()
+            game.Players.LocalPlayer.Character.FallDamage:Destroy()
+            end)
+        end
+    end,
+    Enabled = false
+})
+Y.Button({
+    Text = "Kill yourself",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0    end,
+})
