@@ -149,6 +149,27 @@ Y.Toggle({
     Enabled = false
 })
 
+Y.Toggle({
+    Text = "Teleport to Trinket Room",
+    Callback = function(Value)
+        z = Value
+        while z do task.wait()
+        local Time = 2
+        local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrame.new(5769, 325, 632)})
+        tween:Play()
+        tween.Completed:Wait(E)   
+            task.wait()
+        end
+    end,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "Be inside of Crock first"
+            })
+        end
+    },
+    Enabled = false
+})
 
 Y.Dropdown({
     Text = "interact",
