@@ -154,7 +154,7 @@ Y.Toggle({
     Callback = function(Value)
         z = Value
         while z do task.wait()
-        local Time = 2
+        local Time = 5
         local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrame.new(5769, 325, 632)})
         tween:Play()
         tween.Completed:Wait(E)   
