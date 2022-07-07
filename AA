@@ -136,7 +136,14 @@ local u = P.Dropdown({
     Callback = function(Value)
         getgenv().id = Value
     end,
-    Options = Unit
+    Options = Unit,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "Place a unit then press Refresh Unit"
+            })
+        end
+    }
 })
 
 
