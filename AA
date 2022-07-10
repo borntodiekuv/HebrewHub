@@ -99,6 +99,21 @@ local function getClosest()
     return thing
 end
 
+local function getClosest1()
+    local dist, thing = math.huge
+    for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+        if v:IsA("Model") then
+            local mag =
+                (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
+            if mag < dist then
+                dist = mag
+                thing = v
+            end
+        end
+    end
+    return thing
+end
+
 Y.Toggle({
     Text = "Auto Upgrade Nearest",
     Callback = function(Value)
@@ -130,6 +145,23 @@ Y.Button(
         end
     }
 )
+
+Y.Toggle({
+    Text = "Auto Sell Nearest",
+    Callback = function(Value)
+        bbbb = Value
+        while bbbb do task.wait()
+            pcall(function()
+                local args = {
+                [1] = getClosest1()
+            }
+            
+            game:GetService("ReplicatedStorage").endpoints.client_to_server.sell_unit_ingame:InvokeServer(unpack(args))
+        end)
+        end
+    end,
+    Enabled = false
+})
 
 local u = P.Dropdown({
     Text = "Select Unit",
