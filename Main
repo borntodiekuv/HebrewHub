@@ -43,7 +43,7 @@ local Games = {
     [8303902695] = "none010xzs/main/zombify";
     [5571328985] = "none010xzs/main/jjjj";
     [7026949294] = "none010xzs/main/kreek";
-    [8585657145] = "bub/main/AnimeHeroes"
+    [8585657145] = "bub/main/AnimeHeroes";
     [10108131074] = "none010xzs/main/mow"
 }
 
